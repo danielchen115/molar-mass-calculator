@@ -1,5 +1,6 @@
 # Molar Mass Calculator
 import sys
+# package found online
 import periodictable as pt
 
 def isNumber(x):
@@ -9,7 +10,6 @@ def isNumber(x):
 	else:
 		return False
 
-# Ended up not needing this function (might come in use later?)
 def countElements(compound):
 	counter = 0
 	for i in range(0,len(compound)):
@@ -18,17 +18,6 @@ def countElements(compound):
 	return counter
 
 def divideByElements(compound):
-	# currElement = ""
-	# nextElement = ""
-	# elementList = []
-	# for i in range(0,countElements(compound)-1):
-	# 	# Find next upper case letter
-	# 	for y in range(len(compound)-1,0,-1):
-	# 		if compound[y].isupper() == True:
-	# 			nextElement = compound[y]
-	# 	currElement += compound[0:compound.index(nextElement)]
-	# 	elementList.append(currElement)
-	# 	compound = compound[compound.index(nextElement):]
 	comp = compound
 	elementIndex = 0
 	element = ""
@@ -72,24 +61,3 @@ while True:
 	for x in mmList:
 		mmFinal += x
 	print("Molar Mass: " + str(mmFinal) + " g/mol")
-
-
-# counter = 0
-# lowerBound = 0
-# upperBound = 0
-# ele = ""
-# for i in range (0,len(comp)-2):
-# 	if comp[i].isupper(): 	 
-# 		lowerBound = i
-# 		if isNumber(comp[i+1]):
-# 			upperBound = i+2
-# 		elif comp[i+1].islower():
-# 			upperBound = i+1
-# 		ele = comp[lowerBound:upperBound]
-# 		g = getattr(pt,ele)
-# 		if isNumber(comp[i+1]):
-# 			counter += (g.mass * int(comp[i+1]))
-# 		elif isNumber(comp[i+2]):
-# 			counter += (g.mass* int(comp[i+2]))# 			counter += g.mass
-
-# print("Molar mass: ", counter)
